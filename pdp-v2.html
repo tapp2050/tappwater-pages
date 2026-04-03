@@ -3434,6 +3434,9 @@
     .split-content { padding: 48px 24px; }
     .btf-removes { padding-left: 20px; padding-right: 20px; }
 
+    /* ─── Global mobile overflow fix ─── */
+    html, body { overflow-x: hidden; }
+
     /* ─── Mobile ATF fixes ─── */
     .product-name { font-size: 28px; white-space: normal; }
     .product-tagline { font-size: 13px; }
@@ -3457,12 +3460,21 @@
     .sticky-stars { font-size: 11px; }
     .sticky-stars-icon { font-size: 11px; }
     .sticky-price { font-size: 16px; }
-    .sticky-btn { padding: 8px 16px; font-size: 13px; }
+    .sticky-btn { padding: 8px 14px; font-size: 12px; }
+    .sticky-right { gap: 8px; }
 
     /* As seen in mobile */
     .asi-inner { padding: 0 20px; flex-direction: column; gap: 10px; }
     .asi-logos { gap: 18px; justify-content: center; }
     .asi-logo { height: 14px; }
+
+    /* Calc grid mobile */
+    .calc-result-grid { grid-template-columns: 1fr 1fr; }
+
+    /* Thumbs overflow containment */
+    .thumbs { max-width: calc(100vw - 40px); }
+    .image-panel { max-width: 100%; overflow: hidden; }
+    .atf-outer { overflow: hidden; }
   }
 </style>
 </head>
