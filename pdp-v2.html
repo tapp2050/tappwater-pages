@@ -3407,6 +3407,8 @@
     .image-panel { position: static; }
     .btf-compare, .btf-stages, .btf-reviews, .btf-faq, .btf-guarantee { padding-left: 20px; padding-right: 20px; }
     .btf-lab { padding-left: 20px; padding-right: 20px; }
+    .btf-calc { padding: 60px 20px; }
+    .btf-size { padding: 60px 20px; }
     .compare-cards { grid-template-columns: 1fr; }
     .stages-grid { grid-template-columns: 1fr 1fr; }
     .lab-stats { grid-template-columns: 1fr 1fr; }
@@ -3475,6 +3477,198 @@
     .thumbs { max-width: calc(100vw - 40px); }
     .image-panel { max-width: 100%; overflow: hidden; }
     .atf-outer { overflow: hidden; }
+  }
+
+  /* ─── 540px — tight mobile (iPhone) ─── */
+  @media (max-width: 540px) {
+    /* Announcement bar */
+    .topnav { font-size: 11px; padding: 8px 16px; line-height: 1.45; }
+
+    /* Thumbnails — larger tap targets */
+    .thumb { flex: 0 0 calc((100% - 24px) / 4); }
+    .thumbs { gap: 6px; padding-bottom: 4px; }
+
+    /* Gallery review */
+    .gallery-review { padding: 12px 14px; gap: 10px; margin-top: 14px; }
+    .gr-quote { font-size: 12px; line-height: 1.45; }
+    .gr-meta { font-size: 11px; }
+
+    /* Buy box — model selector */
+    .product-name { font-size: 26px; letter-spacing: -0.8px; }
+    .model-card { padding: 10px 12px; }
+    .model-card .mc-check { top: 8px; right: 8px; width: 18px; height: 18px; }
+    .model-card .mc-badge { font-size: 9px; padding: 2px 7px; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: block; }
+
+    /* Buy box — pack selector */
+    .pack-opt { padding: 11px 12px; gap: 10px; }
+    .pack-name { font-size: 14px; }
+    .pack-detail { font-size: 12px; }
+    .pack-price { font-size: 18px; }
+    .pack-was { font-size: 12px; }
+    .pack-float-badge { right: 12px; font-size: 10px; padding: 3px 10px; }
+
+    /* Buy box — ATC + trust */
+    .btn-atc { font-size: 15px; padding: 16px; }
+    .trust-item { font-size: 10px; padding: 0 4px; }
+    .ti-svg { width: 18px; height: 18px; margin-bottom: 4px; }
+
+    /* As seen in */
+    .asi-logos { gap: 14px 20px; }
+    .asi-logo { height: 12px; max-width: 80px; }
+    .as-seen-in { padding: 16px 0; }
+
+    /* Benefits cards */
+    .benefit-card { padding: 22px 20px; }
+    .bc-badge { width: 40px; height: 40px; border-radius: 12px; font-size: 20px; margin-bottom: 12px; }
+    .bc-headline { font-size: 15px; margin-bottom: 6px; }
+    .bc-body { font-size: 13px; }
+    .bc-featured-stat { font-size: 40px; letter-spacing: -2px; }
+    .benefit-card.bc-featured { padding: 24px 20px; }
+
+    /* Lab stats */
+    .lab-stats { grid-template-columns: 1fr; }
+    .lab-stat { padding: 20px 18px; }
+    .ls-num { font-size: 28px; }
+
+    /* Cost calculator */
+    .calc-heading { font-size: 26px; letter-spacing: -0.8px; }
+    .calc-card { padding: 20px 14px; }
+    .calc-card-num { font-size: 28px; }
+    .calc-card.highlight .calc-card-num { font-size: 30px; }
+    .calc-card.impact .calc-card-num { font-size: 28px; }
+    .calc-card-label { font-size: 10px; }
+    .calc-cta { font-size: 14px; padding: 14px 24px; width: 100%; }
+    .calc-sub { font-size: 14px; }
+    .calc-slider-value { font-size: 18px; }
+
+    /* Vs Jug */
+    .vs-grid { grid-template-columns: 1fr; }
+    .vs-card { padding: 20px 18px; }
+    .vs-card-us { font-size: 22px; }
+    .vs-grid.vs-hero-row .vs-card-us { font-size: 28px; }
+    .vs-bottom-line { font-size: 16px; padding: 22px 20px; }
+
+    /* Timeline */
+    .jcard-dot { width: 34px; height: 34px; font-size: 12px; }
+    .jcard-headline { font-size: 14px; }
+    .jcard-body { font-size: 12.5px; }
+    .journey-model-badge { font-size: 11px; padding: 4px 12px; }
+
+    /* What we remove */
+    .removes-hero { grid-template-columns: 1fr; gap: 12px; }
+    .rh-stat { padding: 18px 20px; }
+    .rhs-num { font-size: 26px; }
+    .rcat-row { padding: 9px 14px; font-size: 12.5px; }
+    .rcat-header { padding: 14px 16px; }
+    .fluoride-note { font-size: 12px; padding: 10px 14px; }
+
+    /* Stages grid */
+    .stages-grid { grid-template-columns: 1fr; gap: 12px; }
+    .stage-card { padding: 20px 18px; }
+    .stage-name { font-size: 14px; }
+    .stage-desc { font-size: 12.5px; }
+
+    /* Reviews */
+    .rm-highlights { grid-template-columns: 1fr; }
+    .rm-num { font-size: 48px; }
+    .review-card { padding: 18px 16px; }
+    .rc-text { font-size: 13px; }
+    .btf-reviews { padding-top: 48px; padding-bottom: 48px; }
+
+    /* Guarantee */
+    .gp-card { padding: 28px 22px; border-radius: 18px; }
+    .gp-numeral { font-size: 48px; }
+    .gp-title { font-size: 20px; margin-bottom: 12px; }
+    .gp-body { font-size: 13.5px; line-height: 1.7; }
+    .guarantee-trust { grid-template-columns: 1fr; gap: 8px; }
+    .gt-item { padding: 14px 16px; }
+
+    /* Tap compatibility — CRITICAL: override inline styles */
+    .tap-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; }
+    .tap-img { height: 140px; }
+    .tap-name { font-size: 12px; padding: 0 10px 3px; }
+    .tap-desc { font-size: 10.5px; padding: 3px 10px 12px; line-height: 1.5; }
+    .tap-status { font-size: 9px; padding: 6px 10px; }
+    .chs-num { font-size: 44px; }
+    .ch-step { padding: 22px 18px; }
+    .ch-step-title { font-size: 14px; }
+    .ch-step-body { font-size: 12.5px; }
+    .ch-thread-split { gap: 6px; }
+    .ch-thread-opt { padding: 10px 8px; }
+    .ch-thread-opt-label { font-size: 10px; }
+    .ch-icon svg { width: 40px; height: 40px; }
+    .compat-cta { padding: 20px 18px; border-radius: 12px; }
+    .compat-cta-text { font-size: 13px; }
+    .compat-cta-btn { font-size: 13px; padding: 12px 20px; width: 100%; text-align: center; justify-content: center; }
+
+    /* Size & specs */
+    .size-text { padding: 16px 20px 20px; }
+    .size-visual { height: 200px; }
+    .size-name { font-size: 16px; }
+    .size-detail-row { font-size: 12.5px; padding: 8px 0; }
+    .sdr-val { font-size: 12px; }
+    .install-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .install-grid img { border-radius: 10px; }
+    .install-grid-label { font-size: 13px; }
+
+    /* Split video sections */
+    .split-video { min-height: 240px; }
+    .split-content { padding: 32px 20px; }
+    .split-heading { font-size: 22px; }
+    .split-sub { font-size: 12.5px; max-width: none; }
+    .ss-title { font-size: 14px; }
+    .ss-desc { font-size: 12.5px; }
+    .split-note { font-size: 11.5px; padding: 8px 12px; }
+
+    /* Comparison table */
+    .ctable { font-size: 12px; }
+    .ctable thead th { padding: 12px 8px; font-size: 11px; }
+    .ctable tbody td { padding: 10px 8px; font-size: 12px; }
+    .ctable tbody td:first-child { font-size: 11px; min-width: 100px; }
+    .cc-bottom { flex-direction: column; gap: 6px; }
+    .cc-name { font-size: 16px; }
+    .cc-price { font-size: 16px; }
+    .dh-card { padding: 28px 22px 24px; }
+    .dh-title { font-size: 17px; }
+    .dh-sub { font-size: 13px; }
+    .dh-list li { font-size: 13px; }
+    .dh-btn { font-size: 14px; padding: 14px 24px; }
+
+    /* RO upsell */
+    .ro-img-side { height: 220px; }
+    .ro-content-side { padding: 24px 20px 28px; }
+    .ro-headline { font-size: 20px; }
+    .ro-desc { font-size: 13.5px; }
+    .ro-stat { padding: 12px 6px; }
+    .ro-stat-num { font-size: 18px; }
+    .ro-stat-label { font-size: 10px; }
+
+    /* FAQ */
+    .btf-faq { padding-top: 48px; padding-bottom: 48px; }
+    .faq-q { font-size: 14px; padding: 16px 0; gap: 12px; }
+    .faq-a { font-size: 13px; line-height: 1.65; }
+
+    /* Contact */
+    .contact-heading { font-size: 22px; }
+    .contact-sub { font-size: 14px; }
+    .contact-btn { padding: 14px 20px; font-size: 14px; }
+
+    /* Sticky nav — hide stars, compact */
+    .sticky-atc-inner { padding: 8px 12px; gap: 8px; }
+    .sticky-atc-inner .sticky-stars { display: none; }
+    .sticky-atc-inner > div:first-child { gap: 0 !important; }
+    .sticky-product-name { font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 140px; }
+    .sticky-product-pack { font-size: 10px; }
+    .sticky-price { font-size: 15px; }
+    .sticky-btn { padding: 8px 12px; font-size: 12px; border-radius: 8px; }
+    .sticky-right { gap: 6px; flex-shrink: 0; }
+
+    /* Global — headings, spacing */
+    .section-heading br, .calc-heading br, .split-heading br { display: none; }
+    .section-heading { font-size: 24px; letter-spacing: -0.6px; }
+    .section-sub { font-size: 14px; margin-bottom: 32px; }
+    .section-eyebrow { font-size: 11px; }
+    .btf-benefits, .btf-lab, .btf-stages, .btf-removes, .btf-guarantee, .btf-vs, .btf-journey, .btf-compat, .btf-size { padding-top: 48px; padding-bottom: 48px; }
   }
 </style>
 </head>
