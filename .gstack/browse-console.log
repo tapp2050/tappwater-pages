@@ -1,0 +1,85 @@
+[2026-03-31T23:37:21.326Z] [info] Your Gorgias chat widget is hidden, to change this go to Preferences > Visibility options
+[2026-03-31T23:37:21.347Z] [startGroup] 📚 API MoonBundle Documentation - 1.1
+[2026-03-31T23:37:21.347Z] [startGroup] 💡 currentOffer (will be deprecated in the future)
+[2026-03-31T23:37:21.347Z] [log]    Description: Currently selected offer
+[2026-03-31T23:37:21.347Z] [log]    Methods: .subscribe(callback) | .get()
+[2026-03-31T23:37:21.347Z] [endGroup] console.groupEnd
+[2026-03-31T23:37:21.347Z] [startGroup] 💡 variants (will be deprecated in the future)
+[2026-03-31T23:37:21.347Z] [log]    Description: Current bundle configuration (legacy)
+[2026-03-31T23:37:21.347Z] [log]    Methods: .subscribe(callback) | .get() | .update(callback)
+[2026-03-31T23:37:21.347Z] [endGroup] console.groupEnd
+[2026-03-31T23:37:21.347Z] [startGroup] ⚙️ config
+[2026-03-31T23:37:21.347Z] [log]    Description: Current bundle configuration
+[2026-03-31T23:37:21.347Z] [log]    Methods: .subscribe(callback) | .get() | .update(callback)
+[2026-03-31T23:37:21.347Z] [endGroup] console.groupEnd
+[2026-03-31T23:37:21.347Z] [startGroup] 🔀 subscription
+[2026-03-31T23:37:21.347Z] [log]    Description: Current subscription configuration
+[2026-03-31T23:37:21.347Z] [log]    Methods: .subscribe(callback) | .get()
+[2026-03-31T23:37:21.347Z] [endGroup] console.groupEnd
+[2026-03-31T23:37:21.347Z] [startGroup] 💵 prices
+[2026-03-31T23:37:21.348Z] [log]    Description: Current prices for each offer
+[2026-03-31T23:37:21.348Z] [log]    Methods: .subscribe(callback) | .get()
+[2026-03-31T23:37:21.348Z] [endGroup] console.groupEnd
+[2026-03-31T23:37:21.348Z] [endGroup] console.groupEnd
+[2026-03-31T23:37:21.549Z] [error] Failed to load resource: the server responded with a status of 404 ()
+[2026-03-31T23:37:21.549Z] [warning] Failed to send analytics after retries: Error: HTTP error! status: 404
+    at AnalyticsManager.sendAnalytics (https://cdn.shopify.com/extensions/019d444c-0ffd-7e73-abc5-e253de5b4bdb/moonbundle-617/assets/moonbundle-v2.0.js:1:5157)
+    at async AnalyticsManager.sendVisitorData (https://cdn.shopify.com/extensions/019d444c-0ffd-7e73-abc5-e253de5b4bdb/moonbundle-617/assets/moonbundle-v2.0.js:1:4099)
+[2026-03-31T23:37:21.613Z] [info] k-web-pixel-version 1
+[2026-03-31T23:37:21.613Z] [debug] initializing analytics, registering events.
+[2026-03-31T23:37:21.613Z] [debug] constructing ReploAnalytics
+[2026-03-31T23:37:21.613Z] [debug] registered replo analytics {cookie: Object, sendBeacon: , localStorage: Object, sessionStorage: Object} {context: Object, data: Object, customerPrivacy: Object} {accountID: 1220658, workspaceId: e0b4143a-c71d-48d5-b932-7393fdfa423b, projectId: f9d67fd1-2c97-48bd-9221-942a9b48e9dd}
+[2026-03-31T23:37:21.613Z] [warning] Klaviyo tracking is disabled. To enable, set the cookie "__kla_off" to false. {is_robot: true, __kla_off: }
+[2026-03-31T23:37:21.653Z] [debug] sending events: {id: 710c4993-9d30-48b2-a89e-9cab8d58fa98, name: replo.session_start} {id: 5677245a-1f47-428f-9e31-b14986023d65, name: replo.first_visit} {id: 324c8b4d-c51d-4963-9302-2753d4ec95c7, name: replo.page_view, conversionsCounter: 0, isEntryPage: true}
+[2026-03-31T23:37:21.654Z] [debug] sending events: {id: 83c25cdd-b0df-4344-8083-661ebaa8b0f1, name: replo.view_product, data: Object}
+[2026-03-31T23:37:21.679Z] [error] Failed to load resource: the server responded with a status of 404 ()
+[2026-03-31T23:37:21.679Z] [warning] Failed to send analytics after retries: Error: HTTP error! status: 404
+    at AnalyticsManager.sendAnalytics (https://cdn.shopify.com/extensions/019d444c-0ffd-7e73-abc5-e253de5b4bdb/moonbundle-617/assets/moonbundle-v2.0.js:1:5157)
+    at async AnalyticsManager.sendOfferSelection (https://cdn.shopify.com/extensions/019d444c-0ffd-7e73-abc5-e253de5b4bdb/moonbundle-617/assets/moonbundle-v2.0.js:1:5497)
+[2026-03-31T23:37:21.941Z] [error] Framing 'https://shop.app/' violates the following Content Security Policy directive: "frame-ancestors 'self' https://shop.app https://admin.shopify.com". The request has been blocked.
+
+[2026-03-31T23:37:21.942Z] [error] Failed to load resource: the server responded with a status of 403 ()
+[2026-03-31T23:37:22.053Z] [warning] In a sandboxed environment, addEventListener may not behave as expected.
+[2026-03-31T23:37:22.061Z] [warning] In a sandboxed environment, addEventListener may not behave as expected.
+[2026-03-31T23:37:22.093Z] [warning] In a sandboxed environment, addEventListener may not behave as expected.
+[2026-03-31T23:37:32.390Z] [error] Access to XMLHttpRequest at 'https://a.klaviyo.com/onsite/track-analytics?company_id=UiBpzv' from origin 'https://tappwater.com.au' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+[2026-03-31T23:37:32.390Z] [error] Failed to load resource: net::ERR_FAILED
+[2026-03-31T23:37:47.889Z] [debug] sending events: {id: 29536d63-278f-4fee-910d-8f33e4a9830e, name: replo.click, data: Object}
+[2026-03-31T23:37:49.264Z] [info] Clear-Site-Data header on 'https://tappwater.com.au/cart/add.js': Cleared data types: "prefetchCache", "prerenderCache".
+[2026-03-31T23:37:49.303Z] [debug] sending events: {id: ceeba033-1b9a-4359-9966-95560e1dfd89, name: replo.add_to_cart, data: Object}
+[2026-03-31T23:37:49.456Z] [error] Failed to load resource: the server responded with a status of 404 ()
+[2026-03-31T23:37:49.456Z] [warning] Failed to send analytics after retries: Error: HTTP error! status: 404
+    at AnalyticsManager.sendAnalytics (https://cdn.shopify.com/extensions/019d444c-0ffd-7e73-abc5-e253de5b4bdb/moonbundle-617/assets/moonbundle-v2.0.js:1:5157)
+    at async AnalyticsManager.sendAddToCart (https://cdn.shopify.com/extensions/019d444c-0ffd-7e73-abc5-e253de5b4bdb/moonbundle-617/assets/moonbundle-v2.0.js:1:5839)
+[2026-03-31T23:38:06.647Z] [error] Access to XMLHttpRequest at 'https://a.klaviyo.com/onsite/track-analytics?company_id=UiBpzv' from origin 'https://tappwater.com.au' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+[2026-03-31T23:38:06.647Z] [error] Failed to load resource: net::ERR_FAILED
+[2026-03-31T23:38:06.651Z] [error] Access to XMLHttpRequest at 'https://a.klaviyo.com/onsite/track-analytics?company_id=UiBpzv' from origin 'https://tappwater.com.au' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+[2026-03-31T23:38:06.651Z] [error] Failed to load resource: net::ERR_FAILED
+[2026-03-31T23:42:36.309Z] [info] Clear-Site-Data header on 'https://tappwater.com.au/cart/clear.js': Cleared data types: "prefetchCache", "prerenderCache".
+[2026-03-31T23:42:36.860Z] [info] k-web-pixel-version 1
+[2026-03-31T23:42:36.860Z] [debug] initializing analytics, registering events.
+[2026-03-31T23:42:36.860Z] [debug] constructing ReploAnalytics
+[2026-03-31T23:42:36.860Z] [debug] registered replo analytics {cookie: Object, sendBeacon: , localStorage: Object, sessionStorage: Object} {context: Object, data: Object, customerPrivacy: Object} {accountID: 1220658, workspaceId: e0b4143a-c71d-48d5-b932-7393fdfa423b, projectId: f9d67fd1-2c97-48bd-9221-942a9b48e9dd}
+[2026-03-31T23:42:36.868Z] [info] Your Gorgias chat widget is hidden, to change this go to Preferences > Visibility options
+[2026-03-31T23:42:36.904Z] [debug] sending events: {id: cba35518-3bfa-4afc-9783-7db4ea4a2060, name: replo.page_view, conversionsCounter: 0, isEntryPage: false}
+[2026-03-31T23:42:36.904Z] [debug] sending events: {id: 71d0511d-7878-43dd-b01f-9248a0b449e8, name: replo.view_product, data: Object}
+[2026-03-31T23:42:36.935Z] [warning] Klaviyo tracking is disabled. To enable, set the cookie "__kla_off" to false. {is_robot: true, __kla_off: }
+[2026-03-31T23:42:36.946Z] [warning] In a sandboxed environment, addEventListener may not behave as expected.
+[2026-03-31T23:42:36.961Z] [warning] In a sandboxed environment, addEventListener may not behave as expected.
+[2026-03-31T23:42:36.961Z] [warning] In a sandboxed environment, addEventListener may not behave as expected.
+[2026-03-31T23:42:37.172Z] [debug] sending events: {id: a410c04a-acd4-4135-9af7-93cfa8e6515b, name: replo.click, data: Object}
+[2026-03-31T23:42:37.763Z] [error] Framing 'https://shop.app/' violates the following Content Security Policy directive: "frame-ancestors 'self' https://shop.app https://admin.shopify.com". The request has been blocked.
+
+[2026-03-31T23:42:37.763Z] [error] Failed to load resource: the server responded with a status of 403 ()
+[2026-03-31T23:42:38.043Z] [info] Clear-Site-Data header on 'https://tappwater.com.au/cart/add.js': Cleared data types: "prefetchCache", "prerenderCache".
+[2026-03-31T23:42:38.067Z] [debug] sending events: {id: 8a96550c-68a0-48b9-8750-0550a740c4a1, name: replo.add_to_cart, data: Object}
+[2026-03-31T23:42:38.071Z] [debug] sending events: {id: 08b0de18-5453-4416-b1cd-4624b1835240, name: replo.add_to_cart, data: Object}
+[2026-03-31T23:43:22.117Z] [error] Access to XMLHttpRequest at 'https://a.klaviyo.com/onsite/track-analytics?company_id=UiBpzv' from origin 'https://tappwater.com.au' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+[2026-03-31T23:43:22.117Z] [error] Failed to load resource: net::ERR_FAILED
+[2026-03-31T23:43:22.128Z] [error] Access to XMLHttpRequest at 'https://a.klaviyo.com/onsite/track-analytics?company_id=UiBpzv' from origin 'https://tappwater.com.au' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+[2026-03-31T23:43:22.128Z] [error] Failed to load resource: net::ERR_FAILED
+[2026-03-31T23:45:02.810Z] [info] Clear-Site-Data header on 'https://tappwater.com.au/cart/clear.js': Cleared data types: "prefetchCache", "prerenderCache".
+[2026-03-31T23:45:21.110Z] [debug] sending events: {id: d2f12038-f4d3-4148-bc59-109e687b7f2b, name: replo.click, data: Object}
+[2026-03-31T23:45:21.823Z] [info] Clear-Site-Data header on 'https://tappwater.com.au/cart/add.js': Cleared data types: "prefetchCache", "prerenderCache".
+[2026-03-31T23:45:21.859Z] [debug] sending events: {id: b11b5486-eb2a-4c6a-9cc1-8c3343622654, name: replo.add_to_cart, data: Object}
+[2026-03-31T23:45:21.867Z] [debug] sending events: {id: 2691160d-f50d-4e87-8bf2-85a8069a1ad5, name: replo.add_to_cart, data: Object}
