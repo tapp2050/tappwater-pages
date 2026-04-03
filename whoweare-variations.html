@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Who We Are — Variations</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+  :root {
+    --grey-1: #1a1a1a;
+    --grey-2: #444;
+    --grey-3: #666;
+    --grey-4: #999;
+    --grey-5: #e0e0e0;
+    --grey-6: #eee;
+    --grey-7: #f7f7f7;
+    --blue: #3b7be8;
+    --navy: #00205b;
+    --green: #16a34a;
+    --radius: 10px;
+    --radius-lg: 14px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+    --shadow: 0 4px 16px rgba(0,0,0,0.08);
+    --transition: 0.25s ease;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: #e8e8e8;
+    padding: 40px 20px;
+  }
+
+  .label {
+    max-width: 1160px;
+    margin: 64px auto 16px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--grey-4);
+  }
+  .label:first-child { margin-top: 0; }
+  .desc {
+    max-width: 1160px;
+    margin: 0 auto 20px;
+    font-size: 13px;
+    color: var(--grey-3);
+    line-height: 1.5;
+  }
+
+
+  /* ═══════════════════════════════════════════ */
+  /* V1 — The Nameplate Card                    */
+  /* Clean card, headline left, pills right      */
+  /* ═══════════════════════════════════════════ */
+
+  .v1 {
+    max-width: 1160px;
+    margin: 0 auto;
+    background: white;
+    border: 1px solid var(--grey-5);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    padding: 40px 44px;
+    align-items: center;
+  }
+  .v1-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--blue);
+    margin-bottom: 12px;
+  }
+  .v1-headline {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: var(--grey-1);
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+  .v1-body {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: var(--grey-3);
+    max-width: 540px;
+  }
+  .v1-body strong { color: var(--grey-1); font-weight: 600; }
+  .v1-body a { color: var(--blue); text-decoration: none; font-weight: 600; }
+  .v1-body a:hover { text-decoration: underline; }
+  .v1-link {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .v1-link:hover { text-decoration: underline; }
+  .v1-divider {
+    width: 1px;
+    align-self: stretch;
+    background: var(--grey-5);
+  }
+  .v1-right {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+  .v1-pill {
+    background: var(--grey-7);
+    border: 1px solid var(--grey-6);
+    border-radius: 100px;
+    padding: 16px 22px;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .v1-pill-num {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -0.5px;
+  }
+  .v1-pill-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--grey-4);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+  }
+
+
+  /* ═══════════════════════════════════════════ */
+  /* V2 — The Single Line                       */
+  /* Ultra minimal, one horizontal strip         */
+  /* ═══════════════════════════════════════════ */
+
+  .v2 {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 32px 44px;
+    background: white;
+    border: 1px solid var(--grey-5);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+  .v2-text {
+    flex: 1;
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--grey-3);
+  }
+  .v2-text strong { color: var(--grey-1); font-weight: 700; }
+  .v2-text a { color: var(--blue); text-decoration: none; font-weight: 600; }
+  .v2-text a:hover { text-decoration: underline; }
+  .v2-div {
+    width: 1px;
+    height: 40px;
+    background: var(--grey-5);
+    flex-shrink: 0;
+  }
+  .v2-stats {
+    display: flex;
+    gap: 24px;
+    flex-shrink: 0;
+  }
+  .v2-stat { text-align: center; }
+  .v2-stat-num {
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--grey-1);
+    letter-spacing: -0.5px;
+  }
+  .v2-stat-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--grey-4);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+
+
+  /* ═══════════════════════════════════════════ */
+  /* V3 — The Two Halves                        */
+  /* Left = local, right = global, clear split   */
+  /* ═══════════════════════════════════════════ */
+
+  .v3 {
+    max-width: 1160px;
+    margin: 0 auto;
+    background: white;
+    border: 1px solid var(--grey-5);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    overflow: hidden;
+  }
+  .v3-half {
+    padding: 36px 40px;
+  }
+  .v3-divider {
+    background: var(--grey-5);
+    align-self: stretch;
+  }
+  .v3-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+  }
+  .v3-label-local { color: var(--green); }
+  .v3-label-global { color: var(--blue); }
+  .v3-title {
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--grey-1);
+    letter-spacing: -0.4px;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .v3-body {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--grey-3);
+  }
+  .v3-body strong { color: var(--grey-1); font-weight: 600; }
+  .v3-body a { color: var(--blue); text-decoration: none; font-weight: 600; }
+  .v3-body a:hover { text-decoration: underline; }
+  .v3-stat-row {
+    display: flex;
+    gap: 20px;
+    margin-top: 16px;
+  }
+  .v3-stat-item {
+    font-size: 13px;
+    color: var(--grey-3);
+  }
+  .v3-stat-item strong {
+    font-weight: 800;
+    color: var(--grey-1);
+    font-size: 15px;
+  }
+
+
+  /* ═══════════════════════════════════════════ */
+  /* V4 — The Quote Card                        */
+  /* Personal quote, then facts beneath          */
+  /* ═══════════════════════════════════════════ */
+
+  .v4 {
+    max-width: 1160px;
+    margin: 0 auto;
+    background: white;
+    border: 1px solid var(--grey-5);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    padding: 48px;
+    text-align: center;
+  }
+  .v4-quote {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    line-height: 1.45;
+    color: var(--grey-1);
+    max-width: 680px;
+    margin: 0 auto 8px;
+  }
+  .v4-quote em {
+    font-style: normal;
+    color: var(--blue);
+  }
+  .v4-attr {
+    font-size: 13px;
+    color: var(--grey-4);
+    margin-bottom: 32px;
+  }
+  .v4-attr strong { color: var(--grey-2); font-weight: 700; }
+  .v4-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--grey-6);
+    border-bottom: 1px solid var(--grey-6);
+    margin-bottom: 24px;
+  }
+  .v4-cell {
+    padding: 20px;
+    border-right: 1px solid var(--grey-6);
+  }
+  .v4-cell:last-child { border-right: none; }
+  .v4-cell-num {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -0.8px;
+  }
+  .v4-cell-label {
+    font-size: 11px;
+    color: var(--grey-4);
+    font-weight: 600;
+    margin-top: 2px;
+  }
+  .v4-footer {
+    font-size: 14px;
+    color: var(--grey-3);
+    line-height: 1.6;
+  }
+  .v4-footer strong { color: var(--grey-1); font-weight: 600; }
+  .v4-footer a { color: var(--blue); text-decoration: none; font-weight: 600; }
+  .v4-footer a:hover { text-decoration: underline; }
+
+
+  /* ═══════════════════════════════════════════ */
+  /* V5 — The Stacked Compact                   */
+  /* Tight, vertical stack, no grid              */
+  /* ═══════════════════════════════════════════ */
+
+  .v5 {
+    max-width: 1160px;
+    margin: 0 auto;
+    background: white;
+    border: 1px solid var(--grey-5);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    padding: 36px 44px;
+  }
+  .v5-top {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .v5-brand {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--grey-1);
+    letter-spacing: -0.3px;
+  }
+  .v5-tag {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--blue);
+    background: rgba(59,123,232,0.08);
+    padding: 3px 10px;
+    border-radius: 100px;
+  }
+  .v5-body {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: var(--grey-3);
+    margin-bottom: 20px;
+  }
+  .v5-body strong { color: var(--grey-1); font-weight: 600; }
+  .v5-body a { color: var(--blue); text-decoration: none; font-weight: 600; }
+  .v5-body a:hover { text-decoration: underline; }
+  .v5-bottom {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding-top: 20px;
+    border-top: 1px solid var(--grey-6);
+  }
+  .v5-stat {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+  }
+  .v5-stat-num {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--grey-1);
+    letter-spacing: -0.3px;
+  }
+  .v5-stat-label {
+    font-size: 12px;
+    color: var(--grey-4);
+    font-weight: 500;
+  }
+  .v5-dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--grey-5);
+    flex-shrink: 0;
+  }
+  .v5-story-link {
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .v5-story-link:hover { text-decoration: underline; }
+
+
+  /* ═══════════════════════════════════════════ */
+  /* V6 — Current PDP version (for reference)   */
+  /* ═══════════════════════════════════════════ */
+
+  .v6 {
+    max-width: 1160px;
+    margin: 0 auto;
+    background: white;
+    border: 1px solid var(--grey-5);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    padding: 40px 44px;
+    align-items: center;
+  }
+  .v6-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--blue);
+    margin-bottom: 12px;
+  }
+  .v6-headline {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: var(--grey-1);
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+  .v6-body {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: var(--grey-3);
+    max-width: 540px;
+  }
+  .v6-body strong { color: var(--grey-1); font-weight: 600; }
+  .v6-body a { color: var(--blue); text-decoration: none; font-weight: 600; }
+  .v6-body a:hover { text-decoration: underline; }
+  .v6-link {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .v6-link:hover { text-decoration: underline; }
+  .v6-divider {
+    width: 1px;
+    align-self: stretch;
+    background: var(--grey-5);
+  }
+  .v6-right {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+  .v6-pill {
+    background: var(--grey-7);
+    border: 1px solid var(--grey-6);
+    border-radius: 100px;
+    padding: 16px 22px;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .v6-pill-num {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -0.5px;
+  }
+  .v6-pill-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--grey-4);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+  }
+
+
+  /* ═══════════════════════════════════════════ */
+  /* Mobile                                      */
+  /* ═══════════════════════════════════════════ */
+
+  @media (max-width: 900px) {
+    .v1 { grid-template-columns: 1fr; padding: 32px 24px; gap: 24px; }
+    .v1-divider { display: none; }
+    .v1-right { flex-wrap: wrap; }
+
+    .v2 { flex-direction: column; padding: 28px 24px; gap: 20px; text-align: center; }
+    .v2-div { width: 100%; height: 1px; }
+
+    .v3 { grid-template-columns: 1fr; }
+    .v3-divider { height: 1px; width: 100%; }
+
+    .v4 { padding: 32px 24px; }
+    .v4-quote { font-size: 18px; }
+    .v4-grid { grid-template-columns: repeat(3, 1fr); }
+
+    .v5 { padding: 28px 24px; }
+    .v5-bottom { flex-wrap: wrap; gap: 16px; }
+    .v5-story-link { margin-left: 0; }
+
+    .v6 { grid-template-columns: 1fr; padding: 32px 24px; gap: 24px; }
+    .v6-divider { display: none; }
+    .v6-right { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<div class="label">V1 — The Nameplate Card</div>
+<div class="desc">Headline + body left, pill stats right, vertical divider. The one currently closest to what's on the PDP.</div>
+<!-- ═══════════════════════════════════════════ -->
+
+<div class="v1">
+  <div>
+    <div class="v1-eyebrow">Who we are</div>
+    <div class="v1-headline">We pack your order. We answer your email. We listen.</div>
+    <div class="v1-body">
+      <strong>Tappwater Australia is James, Sarah, and Nat</strong> — a Sydney family business. We pack every order from our warehouse, reply to every email personally, and use your feedback to improve the product. The filtration science comes from <a href="https://www.bluewatergroup.com/" target="_blank">Bluewater Group</a> — Swedish water technology trusted in 30+ countries.
+    </div>
+    <a href="/pages/our-story" class="v1-link">Read our story →</a>
+  </div>
+  <div class="v1-divider"></div>
+  <div class="v1-right">
+    <div class="v1-pill">
+      <div class="v1-pill-num">2020</div>
+      <div class="v1-pill-label">Est. Sydney</div>
+    </div>
+    <div class="v1-pill">
+      <div class="v1-pill-num">30+</div>
+      <div class="v1-pill-label">Countries</div>
+    </div>
+    <div class="v1-pill">
+      <div class="v1-pill-num">131M+</div>
+      <div class="v1-pill-label">Bottles saved</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<div class="label">V2 — The Single Line</div>
+<div class="desc">Lightest possible touch. One sentence, divider, stats. Nothing more.</div>
+<!-- ═══════════════════════════════════════════ -->
+
+<div class="v2">
+  <div class="v2-text"><strong>Tappwater Australia.</strong> A Sydney family business — we pack your order, answer your email, and listen to your feedback. Filtration by <a href="https://www.bluewatergroup.com/" target="_blank">Bluewater Group</a>, Sweden.</div>
+  <div class="v2-div"></div>
+  <div class="v2-stats">
+    <div class="v2-stat">
+      <div class="v2-stat-num">2020</div>
+      <div class="v2-stat-label">Est.</div>
+    </div>
+    <div class="v2-stat">
+      <div class="v2-stat-num">30+</div>
+      <div class="v2-stat-label">Countries</div>
+    </div>
+    <div class="v2-stat">
+      <div class="v2-stat-num">131M+</div>
+      <div class="v2-stat-label">Bottles saved</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<div class="label">V3 — The Two Halves</div>
+<div class="desc">Left = local team. Right = global brand. Clear visual split between the two stories.</div>
+<!-- ═══════════════════════════════════════════ -->
+
+<div class="v3">
+  <div class="v3-half">
+    <div class="v3-label v3-label-local">Your local team</div>
+    <div class="v3-title">James, Sarah &amp; Nat. Sydney.</div>
+    <div class="v3-body">We pack your order from our Sydney warehouse. We answer your emails — personally. We read every review and use your feedback to make the product better. That's it. No call centre. No chatbot. Just us.</div>
+    <div class="v3-stat-row">
+      <div class="v3-stat-item"><strong>2020</strong> est.</div>
+      <div class="v3-stat-item"><strong>Next-day</strong> shipping</div>
+    </div>
+  </div>
+  <div class="v3-divider"></div>
+  <div class="v3-half">
+    <div class="v3-label v3-label-global">The science behind it</div>
+    <div class="v3-title"><a href="https://www.bluewatergroup.com/" target="_blank" style="color:var(--grey-1);text-decoration:none;">Bluewater Group</a>, Sweden.</div>
+    <div class="v3-body">The filtration technology comes from Bluewater Group — a Swedish water technology company with operations in 30+ countries. Independent lab testing. Patented filtration media. Trusted by millions worldwide.</div>
+    <div class="v3-stat-row">
+      <div class="v3-stat-item"><strong>30+</strong> countries</div>
+      <div class="v3-stat-item"><strong>131M+</strong> bottles saved</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<div class="label">V4 — The Quote Card</div>
+<div class="desc">Leads with a personal quote from the founder, then backs it up with stats and context below.</div>
+<!-- ═══════════════════════════════════════════ -->
+
+<div class="v4">
+  <div class="v4-quote">"We pack your order. We answer your email. We read every review. <em>When you buy from us, you're buying from us.</em>"</div>
+  <div class="v4-attr"><strong>James &amp; Sarah</strong> — Founders, Tappwater Australia</div>
+  <div class="v4-grid">
+    <div class="v4-cell">
+      <div class="v4-cell-num">2020</div>
+      <div class="v4-cell-label">Est. Sydney</div>
+    </div>
+    <div class="v4-cell">
+      <div class="v4-cell-num">30+</div>
+      <div class="v4-cell-label">Countries worldwide</div>
+    </div>
+    <div class="v4-cell">
+      <div class="v4-cell-num">131M+</div>
+      <div class="v4-cell-label">Plastic bottles saved</div>
+    </div>
+  </div>
+  <div class="v4-footer">Sydney family business. Filtration science by <a href="https://www.bluewatergroup.com/" target="_blank"><strong>Bluewater Group</strong></a>, Sweden — trusted in 30+ countries. <a href="/pages/our-story">Our story →</a></div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<div class="label">V5 — The Stacked Compact</div>
+<div class="desc">Tightest layout. Brand name as a bold header, body beneath, inline stats along the bottom. Like a product listing footer.</div>
+<!-- ═══════════════════════════════════════════ -->
+
+<div class="v5">
+  <div class="v5-top">
+    <div class="v5-brand">Tappwater Australia</div>
+    <div class="v5-tag">Sydney family business</div>
+  </div>
+  <div class="v5-body">
+    We pack your order. We answer your email. We listen to your feedback and use it to make the product better. Three people, one warehouse, no middlemen. The filtration science behind every cartridge comes from <a href="https://www.bluewatergroup.com/" target="_blank">Bluewater Group</a> — Swedish water technology trusted in 30+ countries.
+  </div>
+  <div class="v5-bottom">
+    <div class="v5-stat">
+      <div class="v5-stat-num">2020</div>
+      <div class="v5-stat-label">est.</div>
+    </div>
+    <div class="v5-dot"></div>
+    <div class="v5-stat">
+      <div class="v5-stat-num">30+</div>
+      <div class="v5-stat-label">countries</div>
+    </div>
+    <div class="v5-dot"></div>
+    <div class="v5-stat">
+      <div class="v5-stat-num">131M+</div>
+      <div class="v5-stat-label">bottles saved</div>
+    </div>
+    <a href="/pages/our-story" class="v5-story-link">Our story →</a>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<div class="label">V6 — Current PDP version (for reference)</div>
+<div class="desc">What's on the PDP right now. Included so you can compare side by side.</div>
+<!-- ═══════════════════════════════════════════ -->
+
+<div class="v6">
+  <div>
+    <div class="v6-eyebrow">Who we are</div>
+    <div class="v6-headline">We pack your order. We answer your email. We listen.</div>
+    <div class="v6-body">
+      <strong>Tappwater Australia is James, Sarah, and Nat</strong> — a Sydney family business. We pack every order from our Sydney warehouse, we reply to every email personally, and we use customer feedback to make the product better. Not a call centre. Not a chatbot. Us. The filtration behind the product comes from <a href="https://www.bluewatergroup.com/" target="_blank">Bluewater Group</a> — a Swedish water technology company trusted in 30+ countries.
+    </div>
+    <a href="/pages/our-story" class="v6-link">Read our story →</a>
+  </div>
+  <div class="v6-divider"></div>
+  <div class="v6-right">
+    <div class="v6-pill">
+      <div class="v6-pill-num">2020</div>
+      <div class="v6-pill-label">Est. Sydney</div>
+    </div>
+    <div class="v6-pill">
+      <div class="v6-pill-num">30+</div>
+      <div class="v6-pill-label">Countries</div>
+    </div>
+    <div class="v6-pill">
+      <div class="v6-pill-num">131M+</div>
+      <div class="v6-pill-label">Bottles saved</div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>

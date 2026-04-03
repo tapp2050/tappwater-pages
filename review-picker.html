@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Review Photos</title>
+<style>
+body { font-family: system-ui; background: #f5f5f5; padding: 24px; margin: 0; }
+h1 { font-size: 18px; margin-bottom: 16px; }
+.grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 80px; }
+.pic { background: white; border: 3px solid #e5e7eb; border-radius: 10px; overflow: hidden; cursor: pointer; position: relative; }
+.pic.selected { border-color: #22c55e; box-shadow: 0 0 0 2px #22c55e40; }
+.pic img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
+.pic .name { font-size: 10px; padding: 4px 6px; color: #666; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pic .check { position: absolute; top: 6px; right: 6px; background: #22c55e; color: white; border-radius: 50%; width: 22px; height: 22px; display: none; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; }
+.pic.selected .check { display: flex; }
+#bar { position: fixed; bottom: 0; left: 0; right: 0; background: white; border-top: 2px solid #e5e7eb; padding: 12px 24px; display: flex; align-items: center; gap: 16px; font-size: 13px; }
+#bar strong { font-size: 15px; }
+#copyBtn { background: #166534; color: white; border: none; border-radius: 8px; padding: 8px 18px; font-size: 13px; font-weight: 700; cursor: pointer; }
+#copyBtn:active { background: #14532d; }
+#names { color: #555; flex: 1; }
+#copied { color: #22c55e; font-weight: 700; display: none; }
+</style>
+</head>
+<body>
+<h1>Click to select · then hit Copy</h1>
+<div class="grid"><div class="pic" onclick="toggle(this)"><img src="review-photos/afshin.jpg" loading="lazy"><div class="name">afshin.jpg</div><div class="check">✓</div></div>
+<div class="pic" onclick="toggle(this)"><img src="review-photos/amy_2.jpg" loading="lazy"><div class="name">amy_2.jpg</div><div class="check">✓</div></div>
+<div class="pic" onclick="toggle(this)"><img src="review-photos/amy_goodrick.jpg" loading="lazy"><div class="name">amy_goodrick.jpg</div><div class="check">✓</div></div>
+<div class="pic" onclick="toggle(this)"><img src="review-photos/bonnie.jpg" loading="lazy"><div class="name">bonnie.jpg</div><div class="check">✓</div></div>
+<div class="pic" onclick="toggle(this)"><img src="review-photos/caroline_c.jpg" loading="lazy"><div class="name">caroline_c.jpg</div><div class="check">✓</div></div>
+<div class="pic" onclick="toggle(this)"><img src="review-photos/eri_hammond_1.jpg" loading="lazy"><div class="name">eri_hammond_1.jpg</div><div class="check">✓</div></div>
+<div class="pic" onclick="toggle(this)"><img src="review-photos/eri_hammond_2.jpg" loading="lazy"><div class="name">eri_hammond_2.jpg</div><div class="check">✓</div></div>
+<div class="pic" onclick="toggle(this)"><img src="review-photos/eri_hammond_3.jpg" loading="lazy"><div class="name">eri_hammond_3.jpg</div><div class="check">✓</div></div>
+<div class="pic" onclick="toggle(this)"><img src="review-photos/genevieve_1.jpeg" loading="lazy"><div class="name">genevieve_1.jpeg</div><div class="check">✓</div></div>
+<div class="pic" onclick="toggle(this)"><img src="review-photos/genevieve_2.jpeg" loading="lazy"><div class="name">genevieve_2.jpeg</div><div class="check">✓</div></div>
+<div class="pic" onclick="toggle(this)"><img src="review-photos/helen_s.jpeg" loading="lazy"><div class="name">helen_s.jpeg</div><div class="check">✓</div></div>
+<div class="pic" onclick="toggle(this)"><img src="review-photos/jason_g.jpg" loading="lazy"><div class="name">jason_g.jpg</div><div class="check">✓</div></div>
+<div class="pic" onclick="toggle(this)"><img src="review-photos/jessica_fitz.jpg" loading="lazy"><div class="name">jessica_fitz.jpg</div><div class="check">✓</div></div>
+<div class="pic" onclick="toggle(this)"><img src="review-photos/jessica_w_1.png" loading="lazy"><div class="name">jessica_w_1.png</div><div class="check">✓</div></div>
+<div class="pic" onclick="toggle(this)"><img src="review-photos/jessica_w_2.jpeg" loading="lazy"><div class="name">jessica_w_2.jpeg</div><div class="check">✓</div></div>
+<div class="pic" onclick="toggle(this)"><img src="review-photos/luisa_a.jpg" loading="lazy"><div class="name">luisa_a.jpg</div><div class="check">✓</div></div>
+<div class="pic" onclick="toggle(this)"><img src="review-photos/lyn_lamble.jpeg" loading="lazy"><div class="name">lyn_lamble.jpeg</div><div class="check">✓</div></div>
+<div class="pic" onclick="toggle(this)"><img src="review-photos/maggie_taouk.jpg" loading="lazy"><div class="name">maggie_taouk.jpg</div><div class="check">✓</div></div>
+<div class="pic" onclick="toggle(this)"><img src="review-photos/monique.jpg" loading="lazy"><div class="name">monique.jpg</div><div class="check">✓</div></div>
+<div class="pic" onclick="toggle(this)"><img src="review-photos/mubashar_h.jpg" loading="lazy"><div class="name">mubashar_h.jpg</div><div class="check">✓</div></div>
+<div class="pic" onclick="toggle(this)"><img src="review-photos/nik_dalton.jpeg" loading="lazy"><div class="name">nik_dalton.jpeg</div><div class="check">✓</div></div>
+<div class="pic" onclick="toggle(this)"><img src="review-photos/omri.jpg" loading="lazy"><div class="name">omri.jpg</div><div class="check">✓</div></div>
+<div class="pic" onclick="toggle(this)"><img src="review-photos/rachel_ee_1.jpg" loading="lazy"><div class="name">rachel_ee_1.jpg</div><div class="check">✓</div></div>
+<div class="pic" onclick="toggle(this)"><img src="review-photos/rachel_ee_2.jpg" loading="lazy"><div class="name">rachel_ee_2.jpg</div><div class="check">✓</div></div>
+<div class="pic" onclick="toggle(this)"><img src="review-photos/rachel_ee_3.jpg" loading="lazy"><div class="name">rachel_ee_3.jpg</div><div class="check">✓</div></div>
+<div class="pic" onclick="toggle(this)"><img src="review-photos/rhonda_zammit.jpeg" loading="lazy"><div class="name">rhonda_zammit.jpeg</div><div class="check">✓</div></div>
+<div class="pic" onclick="toggle(this)"><img src="review-photos/sarah_2.jpeg" loading="lazy"><div class="name">sarah_2.jpeg</div><div class="check">✓</div></div>
+<div class="pic" onclick="toggle(this)"><img src="review-photos/sarah_reynolds.jpg" loading="lazy"><div class="name">sarah_reynolds.jpg</div><div class="check">✓</div></div>
+<div class="pic" onclick="toggle(this)"><img src="review-photos/vincenza_b.jpg" loading="lazy"><div class="name">vincenza_b.jpg</div><div class="check">✓</div></div>
+<div class="pic" onclick="toggle(this)"><img src="review-photos/yolanda.jpg" loading="lazy"><div class="name">yolanda.jpg</div><div class="check">✓</div></div>
+<div class="pic" onclick="toggle(this)"><img src="review-photos/zsuzsa_m.jpg" loading="lazy"><div class="name">zsuzsa_m.jpg</div><div class="check">✓</div></div></div>
+<div id="bar">
+  <strong id="count">0</strong> selected
+  <span id="names"></span>
+  <span id="copied">✓ Copied!</span>
+  <button id="copyBtn" onclick="copySelection()">Copy selection</button>
+</div>
+<script>
+function toggle(el) {
+  el.classList.toggle('selected');
+  update();
+}
+function update() {
+  const sel = document.querySelectorAll('.selected');
+  const names = [...sel].map(e => e.querySelector('.name').textContent);
+  document.getElementById('count').textContent = sel.length;
+  document.getElementById('names').textContent = names.join(', ');
+}
+function copySelection() {
+  const sel = document.querySelectorAll('.selected');
+  const names = [...sel].map(e => e.querySelector('.name').textContent).join('\n');
+  navigator.clipboard.writeText(names).then(() => {
+    const c = document.getElementById('copied');
+    c.style.display = 'inline';
+    setTimeout(() => c.style.display = 'none', 2000);
+  });
+}
+</script>
+</body>
+</html>

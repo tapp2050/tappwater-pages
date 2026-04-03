@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoPro Buy Box — 5 Approaches</title>
+<style>
+  :root {
+    --navy: #00205b;
+    --blue: #3B7BE8;
+    --green: #21c45e;
+    --amber: #d97706;
+    --grey-sub: #6b7280;
+    --grey-light: #f4f4f5;
+    --grey-border: #ededed;
+    --white: #ffffff;
+    --radius: 12px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #f8f8f8;
+    color: var(--navy);
+    line-height: 1.5;
+  }
+
+  .page-header {
+    background: var(--navy);
+    color: white;
+    text-align: center;
+    padding: 40px 20px 30px;
+  }
+  .page-header h1 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
+  .page-header p { color: rgba(255,255,255,0.7); font-size: 14px; }
+
+  .approach {
+    max-width: 520px;
+    margin: 40px auto;
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .approach-label {
+    background: var(--navy);
+    color: white;
+    padding: 14px 24px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .approach-body { padding: 28px 24px; }
+
+  /* Shared */
+  .stars { color: var(--amber); font-size: 14px; letter-spacing: 1px; }
+  .stars span { color: var(--grey-sub); font-size: 13px; font-weight: 400; }
+  .price { font-size: 32px; font-weight: 700; color: var(--navy); }
+  .price-was { font-size: 16px; color: var(--grey-sub); text-decoration: line-through; margin-right: 8px; }
+  .price-save { font-size: 13px; color: var(--green); font-weight: 600; margin-left: 6px; }
+  .subtitle { font-size: 14px; color: var(--grey-sub); margin-top: 2px; }
+  .divider { border: none; border-top: 1px solid var(--grey-border); margin: 20px 0; }
+
+  .btn-atc {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    background: var(--navy);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.3px;
+    transition: background 0.2s;
+  }
+  .btn-atc:hover { background: #001a4a; }
+  .btn-atc.green { background: var(--green); }
+  .btn-atc.green:hover { background: #1aab52; }
+
+  .trust-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 16px;
+    font-size: 12px;
+    color: var(--grey-sub);
+  }
+  .trust-row span::before { content: "✓ "; color: var(--green); font-weight: 700; }
+
+  .badge-best {
+    display: inline-block;
+    background: var(--green);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .badge-popular {
+    display: inline-block;
+    background: var(--blue);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* ─── APPROACH 1: Model toggle → Pack selector ─── */
+  .model-toggle {
+    display: flex;
+    background: var(--grey-light);
+    border-radius: 10px;
+    padding: 4px;
+    margin-bottom: 20px;
+  }
+  .model-toggle button {
+    flex: 1;
+    padding: 12px 8px;
+    border: none;
+    background: transparent;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--grey-sub);
+    cursor: pointer;
+    transition: all 0.2s;
+    line-height: 1.3;
+  }
+  .model-toggle button.active {
+    background: var(--white);
+    color: var(--navy);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  .model-toggle button small {
+    display: block;
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--grey-sub);
+    margin-top: 2px;
+  }
+
+  .pack-option {
+    border: 2px solid var(--grey-border);
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+    position: relative;
+  }
+  .pack-option:hover { border-color: var(--blue); }
+  .pack-option.selected { border-color: var(--navy); background: rgba(0,32,91,0.02); }
+  .pack-option .pack-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .pack-option .pack-name { font-weight: 600; font-size: 15px; }
+  .pack-option .pack-detail { font-size: 13px; color: var(--grey-sub); margin-top: 2px; }
+  .pack-option .pack-price { font-weight: 700; font-size: 18px; text-align: right; }
+  .pack-option .pack-price-was { font-size: 13px; color: var(--grey-sub); text-decoration: line-through; }
+  .pack-option .pack-badge { position: absolute; top: -10px; right: 16px; }
+
+  /* ─── APPROACH 2: Card Grid ─── */
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .card-grid .card {
+    border: 2px solid var(--grey-border);
+    border-radius: 10px;
+    padding: 16px 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+    position: relative;
+  }
+  .card-grid .card:hover { border-color: var(--blue); }
+  .card-grid .card.selected { border-color: var(--navy); background: rgba(0,32,91,0.02); }
+  .card-grid .card .card-model { font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--grey-sub); font-weight: 600; margin-bottom: 4px; }
+  .card-grid .card .card-pack { font-weight: 700; font-size: 15px; margin-bottom: 2px; }
+  .card-grid .card .card-sub { font-size: 12px; color: var(--grey-sub); }
+  .card-grid .card .card-price { font-size: 20px; font-weight: 700; margin-top: 10px; }
+  .card-grid .card .card-badge { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); }
+  .card-grid .card .card-was { font-size: 12px; color: var(--grey-sub); text-decoration: line-through; }
+
+  /* ─── APPROACH 3: Horizontal tabs ─── */
+  .htabs {
+    display: flex;
+    border-bottom: 2px solid var(--grey-border);
+    margin-bottom: 20px;
+  }
+  .htabs button {
+    flex: 1;
+    padding: 14px 8px;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--grey-sub);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.2s;
+  }
+  .htabs button.active {
+    color: var(--navy);
+    border-bottom-color: var(--navy);
+  }
+  .htabs button small {
+    display: block;
+    font-size: 11px;
+    font-weight: 400;
+    margin-top: 2px;
+  }
+
+  .radio-pack {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    border: 2px solid var(--grey-border);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+  }
+  .radio-pack:hover { border-color: var(--blue); }
+  .radio-pack.selected { border-color: var(--navy); }
+  .radio-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--grey-border);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .radio-pack.selected .radio-dot {
+    border-color: var(--navy);
+  }
+  .radio-pack.selected .radio-dot::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--navy);
+  }
+  .radio-pack .radio-info { flex: 1; }
+  .radio-pack .radio-name { font-weight: 600; font-size: 15px; }
+  .radio-pack .radio-detail { font-size: 13px; color: var(--grey-sub); }
+  .radio-pack .radio-price { font-weight: 700; font-size: 18px; text-align: right; }
+
+  /* ─── APPROACH 4: Stepped ─── */
+  .step-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--grey-sub);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .step-pills {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  .step-pills button {
+    flex: 1;
+    padding: 14px 12px;
+    border: 2px solid var(--grey-border);
+    background: transparent;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--grey-sub);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+  }
+  .step-pills button:hover { border-color: var(--blue); }
+  .step-pills button.active {
+    border-color: var(--navy);
+    color: var(--navy);
+    background: rgba(0,32,91,0.03);
+  }
+  .step-pills button small {
+    display: block;
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--grey-sub);
+    margin-top: 3px;
+  }
+
+  /* ─── APPROACH 5: Visual comparison ─── */
+  .compare-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .compare-col {
+    flex: 1;
+    border: 2px solid var(--grey-border);
+    border-radius: 10px;
+    padding: 18px 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+    position: relative;
+  }
+  .compare-col:hover { border-color: var(--blue); }
+  .compare-col.selected { border-color: var(--navy); background: rgba(0,32,91,0.02); }
+  .compare-col .col-icon { font-size: 36px; margin-bottom: 8px; }
+  .compare-col .col-name { font-weight: 700; font-size: 15px; }
+  .compare-col .col-sub { font-size: 12px; color: var(--grey-sub); margin-top: 2px; }
+  .compare-col .col-price { font-size: 22px; font-weight: 700; margin-top: 12px; }
+  .compare-col .col-badge { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); }
+
+  .compare-table {
+    width: 100%;
+    font-size: 13px;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  .compare-table th {
+    text-align: left;
+    padding: 8px 0;
+    font-weight: 400;
+    color: var(--grey-sub);
+    border-bottom: 1px solid var(--grey-border);
+  }
+  .compare-table td {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--grey-border);
+    text-align: center;
+    font-weight: 600;
+  }
+  .compare-table td.highlight { color: var(--green); }
+
+  /* ─── Shared detail block ─── */
+  .detail-block {
+    background: var(--grey-light);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin: 16px 0;
+    font-size: 13px;
+    color: var(--grey-sub);
+  }
+  .detail-block strong { color: var(--navy); }
+
+  .includes-list {
+    list-style: none;
+    margin: 16px 0;
+  }
+  .includes-list li {
+    padding: 6px 0;
+    font-size: 14px;
+    color: var(--navy);
+  }
+  .includes-list li::before {
+    content: "✓";
+    color: var(--green);
+    font-weight: 700;
+    margin-right: 10px;
+  }
+
+  .section-gap { height: 60px; }
+
+  /* Responsive */
+  @media (max-width: 560px) {
+    .approach { margin: 20px 12px; }
+    .approach-body { padding: 20px 16px; }
+    .card-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>EcoPro Buy Box — 5 Approaches</h1>
+  <p>Monster PDP: 4 variants, 1 page, 400+ shared reviews</p>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- APPROACH 1: Model Toggle → Pack Selector       -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="approach">
+  <div class="approach-label">Approach 1 — Model Toggle + Pack Selector</div>
+  <div class="approach-body">
+
+    <div class="stars">★★★★★ <span>4.9 · 405 reviews</span></div>
+    <h2 style="font-size:22px; margin-top:8px;">EcoPro Tap Water Filter</h2>
+    <p class="subtitle">Lab-tested. 60-sec install. No plumber.</p>
+
+    <hr class="divider">
+
+    <!-- Step 1: Model -->
+    <div class="step-label">Choose your model</div>
+    <div class="model-toggle">
+      <button class="active">
+        EcoPro Compact
+        <small>5-stage filtration</small>
+      </button>
+      <button>
+        EcoPro Chrome SMR
+        <small>6-stage + minerals</small>
+      </button>
+    </div>
+
+    <!-- Step 2: Pack -->
+    <div class="pack-option" style="margin-bottom:10px;">
+      <div class="pack-row">
+        <div>
+          <div class="pack-name">Starter Pack</div>
+          <div class="pack-detail">Filter + 1 refill · 2 months</div>
+        </div>
+        <div class="pack-price">$109.99</div>
+      </div>
+    </div>
+
+    <div class="pack-option selected">
+      <div class="pack-badge"><span class="badge-best">Best Value</span></div>
+      <div class="pack-row">
+        <div>
+          <div class="pack-name">Annual Pack</div>
+          <div class="pack-detail">Filter + 6 refills · 12 months</div>
+        </div>
+        <div style="text-align:right;">
+          <div class="pack-price-was">$279.99</div>
+          <div class="pack-price">$199.99</div>
+        </div>
+      </div>
+    </div>
+
+    <ul class="includes-list">
+      <li>93% PFAS removal — independently lab tested</li>
+      <li>Free express shipping</li>
+      <li>60-day money-back guarantee</li>
+    </ul>
+
+    <button class="btn-atc">Add to Cart — $199.99</button>
+
+    <div class="trust-row">
+      <span>Free shipping</span>
+      <span>60-day trial</span>
+      <span>Lifetime warranty</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- APPROACH 2: 2×2 Card Grid                       -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="approach">
+  <div class="approach-label">Approach 2 — Card Grid (All 4 visible)</div>
+  <div class="approach-body">
+
+    <div class="stars">★★★★★ <span>4.9 · 405 reviews</span></div>
+    <h2 style="font-size:22px; margin-top:8px;">EcoPro Tap Water Filter</h2>
+    <p class="subtitle">Choose your filter. Choose your pack.</p>
+
+    <hr class="divider">
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-model">Compact</div>
+        <div class="card-pack">Starter</div>
+        <div class="card-sub">Filter + 1 refill</div>
+        <div class="card-sub">2 months</div>
+        <div class="card-price">$109.99</div>
+      </div>
+
+      <div class="card selected">
+        <div class="card-badge"><span class="badge-best">Best Value</span></div>
+        <div class="card-model">Compact</div>
+        <div class="card-pack">Annual</div>
+        <div class="card-sub">Filter + 6 refills</div>
+        <div class="card-sub">12 months</div>
+        <div class="card-was">$279.99</div>
+        <div class="card-price">$199.99</div>
+      </div>
+
+      <div class="card">
+        <div class="card-model">Chrome SMR</div>
+        <div class="card-pack">Starter</div>
+        <div class="card-sub">Filter + 1 cartridge</div>
+        <div class="card-sub">3 months</div>
+        <div class="card-price">$149.99</div>
+      </div>
+
+      <div class="card">
+        <div class="card-badge"><span class="badge-popular">+ Minerals</span></div>
+        <div class="card-model">Chrome SMR</div>
+        <div class="card-pack">Annual</div>
+        <div class="card-sub">Filter + 4 cartridges</div>
+        <div class="card-sub">12 months</div>
+        <div class="card-was">$329.98</div>
+        <div class="card-price">$279.99</div>
+      </div>
+    </div>
+
+    <div class="detail-block">
+      <strong>Compact Annual Pack</strong> — Filter + 6 refills (12 months). Replace every 2 months. Same 5-stage filtration, same lab results. The most popular way to start.
+    </div>
+
+    <button class="btn-atc">Add to Cart — $199.99</button>
+
+    <div class="trust-row">
+      <span>Free shipping</span>
+      <span>60-day trial</span>
+      <span>Lifetime warranty</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- APPROACH 3: Horizontal Tabs + Radio Packs       -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="approach">
+  <div class="approach-label">Approach 3 — Tabs (Model) + Radios (Pack)</div>
+  <div class="approach-body">
+
+    <div class="stars">★★★★★ <span>4.9 · 405 reviews</span></div>
+    <h2 style="font-size:22px; margin-top:8px;">EcoPro Tap Water Filter</h2>
+    <p class="subtitle">Removes 93% of PFAS. 60-sec install.</p>
+
+    <hr class="divider">
+
+    <div class="htabs">
+      <button class="active">
+        Compact
+        <small>5-stage · from $109.99</small>
+      </button>
+      <button>
+        Chrome SMR
+        <small>6-stage + minerals · from $149.99</small>
+      </button>
+    </div>
+
+    <div class="radio-pack">
+      <div class="radio-dot"></div>
+      <div class="radio-info">
+        <div class="radio-name">Starter Pack</div>
+        <div class="radio-detail">Filter + 1 refill · 2 months</div>
+      </div>
+      <div class="radio-price">$109.99</div>
+    </div>
+
+    <div class="radio-pack selected">
+      <div class="radio-dot"></div>
+      <div class="radio-info">
+        <div class="radio-name">Annual Pack <span class="badge-best" style="vertical-align:middle; margin-left:6px;">Save $80</span></div>
+        <div class="radio-detail">Filter + 6 refills · 12 months · free shipping</div>
+      </div>
+      <div class="radio-price">$199.99</div>
+    </div>
+
+    <ul class="includes-list">
+      <li>>99% microplastics removed</li>
+      <li>98% chlorine removed</li>
+      <li>93% PFAS removed</li>
+      <li>Adapters for 95% of Australian taps</li>
+    </ul>
+
+    <button class="btn-atc green">Add to Cart — $199.99</button>
+
+    <div class="trust-row">
+      <span>Free shipping</span>
+      <span>60-day trial</span>
+      <span>Lifetime warranty</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- APPROACH 4: Stepped Selector (Step 1/2)         -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="approach">
+  <div class="approach-label">Approach 4 — Stepped (1. Model → 2. Pack)</div>
+  <div class="approach-body">
+
+    <div class="stars">★★★★★ <span>4.9 · 405 reviews</span></div>
+    <h2 style="font-size:22px; margin-top:8px;">EcoPro Tap Water Filter</h2>
+    <p class="subtitle">Lab-tested. Independently verified. Published results.</p>
+
+    <hr class="divider">
+
+    <div class="step-label">Step 1 — Choose your filter</div>
+    <div class="step-pills">
+      <button class="active">
+        Compact
+        <small>5-stage filtration</small>
+        <small>Pure, clean water</small>
+      </button>
+      <button>
+        Chrome SMR
+        <small>6-stage + Swedish Mineral Rock™</small>
+        <small>Filtered &amp; remineralised</small>
+      </button>
+    </div>
+
+    <div class="step-label">Step 2 — Choose your pack</div>
+    <div class="step-pills">
+      <button>
+        Starter
+        <small>$109.99</small>
+        <small>Filter + 1 refill (2mo)</small>
+      </button>
+      <button class="active">
+        Annual
+        <small>$199.99</small>
+        <small>Filter + 6 refills (12mo)</small>
+      </button>
+    </div>
+
+    <div class="detail-block">
+      <strong>You selected: Compact Annual Pack — $199.99</strong><br>
+      EcoPro Compact filter + 6 refills. Replace every 2 months. A full year of filtered water, zero reordering. Free express shipping.
+    </div>
+
+    <div class="price" style="margin-top:16px;">
+      <span class="price-was">$279.99</span>$199.99
+      <span class="price-save">Save $80</span>
+    </div>
+
+    <button class="btn-atc" style="margin-top:16px;">Add to Cart</button>
+
+    <div class="trust-row">
+      <span>Free shipping</span>
+      <span>60-day trial</span>
+      <span>Lifetime warranty</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- APPROACH 5: Side-by-side comparison columns     -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="approach">
+  <div class="approach-label">Approach 5 — Visual Comparison + Selector</div>
+  <div class="approach-body">
+
+    <div class="stars">★★★★★ <span>4.9 · 405 reviews</span></div>
+    <h2 style="font-size:22px; margin-top:8px;">EcoPro Tap Water Filter</h2>
+    <p class="subtitle">Same filtration core. Choose your level.</p>
+
+    <hr class="divider">
+
+    <div class="compare-row">
+      <div class="compare-col selected">
+        <div class="col-badge"><span class="badge-popular">Most Popular</span></div>
+        <div class="col-icon">💧</div>
+        <div class="col-name">Compact</div>
+        <div class="col-sub">5-stage filtration</div>
+        <div class="col-sub" style="color:var(--navy); font-weight:600;">Pure, clean water</div>
+        <div class="col-price">from $109.99</div>
+      </div>
+
+      <div class="compare-col">
+        <div class="col-badge"><span class="badge-best">+ Minerals</span></div>
+        <div class="col-icon">✨</div>
+        <div class="col-name">Chrome SMR</div>
+        <div class="col-sub">6-stage + Swedish Mineral Rock™</div>
+        <div class="col-sub" style="color:var(--navy); font-weight:600;">Filtered &amp; remineralised</div>
+        <div class="col-price">from $149.99</div>
+      </div>
+    </div>
+
+    <table class="compare-table">
+      <tr><th></th><td><strong>Compact</strong></td><td><strong>SMR</strong></td></tr>
+      <tr><th>PFAS removal</th><td>93%</td><td>93%</td></tr>
+      <tr><th>Chlorine</th><td>98%</td><td>98%</td></tr>
+      <tr><th>Microplastics</th><td>>99%</td><td>>99%</td></tr>
+      <tr><th>Minerals added</th><td>—</td><td class="highlight">Ca, Mg, K</td></tr>
+      <tr><th>Cartridge life</th><td>2 months</td><td>3 months</td></tr>
+      <tr><th>Annual cost</th><td>$199.99</td><td>$279.99</td></tr>
+    </table>
+
+    <!-- Pack selector for chosen model -->
+    <div class="step-label">Choose your pack</div>
+    <div class="radio-pack">
+      <div class="radio-dot"></div>
+      <div class="radio-info">
+        <div class="radio-name">Starter Pack</div>
+        <div class="radio-detail">Filter + 1 refill · try it first</div>
+      </div>
+      <div class="radio-price">$109.99</div>
+    </div>
+    <div class="radio-pack selected">
+      <div class="radio-dot"></div>
+      <div class="radio-info">
+        <div class="radio-name">Annual Pack <span class="badge-best" style="vertical-align:middle; margin-left:6px;">Save $80</span></div>
+        <div class="radio-detail">Filter + 6 refills · 12 months</div>
+      </div>
+      <div class="radio-price">$199.99</div>
+    </div>
+
+    <button class="btn-atc" style="margin-top:20px;">Add to Cart — $199.99</button>
+
+    <div class="trust-row">
+      <span>Free shipping</span>
+      <span>60-day trial</span>
+      <span>Lifetime warranty</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-gap"></div>
+
+</body>
+</html>
